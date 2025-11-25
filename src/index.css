@@ -49,46 +49,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -183,3 +143,35 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+    .auth-layout {
+        @apply flex flex-col justify-between lg:flex-row h-screen bg-gray-900 relative overflow-hidden;
+    }
+
+    .auth-left-section {
+        @apply w-full lg:w-[45%] lg:h-screen px-6 lg:px-16 flex flex-col overflow-y-auto;
+    }
+    .auth-right-section {
+        @apply w-full max-lg:border-t max-lg:border-gray-600 lg:w-[55%] lg:h-screen bg-gray-800 px-6 py-4 md:p-6 lg:py-12 lg:px-18 flex flex-col justify-start;
+    }
+    .auth-dashboard-preview {
+        @apply border-6 border-gray-800 left-0 hidden h-auto max-w-none lg:block rounded-xl;
+    }
+    .auth-logo {
+        @apply pt-6 lg:pt-8 mb-8 lg:mb-12;
+    }
+    .form-title {
+        @apply text-4xl font-bold text-gray-400 mb-10;
+    }
+    .form-label {
+        @apply text-sm font-medium text-gray-400;
+    }
+    .form-input {
+        @apply h-12 px-3 py-3 text-white text-base placeholder:text-gray-500 border-gray-600 bg-gray-800 rounded-lg focus:!border-yellow-500 focus:ring-0;
+    }
+}
+
